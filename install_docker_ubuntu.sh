@@ -1,4 +1,5 @@
 # Add Docker's official GPG key:
+echo 'Installing Docker'
 sudo apt-get update &&
 sudo apt-get install ca-certificates curl &&
 sudo install -m 0755 -d /etc/apt/keyrings &&
@@ -12,3 +13,6 @@ echo \
   sudo tee /etc/apt/sources.list.d/docker.list > /dev/null &&
 sudo apt-get update &&
 sudo apt-get install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
+echo 'Docker installed'
+echo 'Adding this user to docker group'
+sudo usermod -aG docker $USER
